@@ -1,0 +1,85 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px;
+}
+
+.form {
+  padding: 12px;
+}
+
+.form__title {
+  color: blue;
+  font-size: 35px;
+  padding-bottom: 20px;
+}
+
+.card__title {
+  font-size: 25px;
+  padding-bottom: 20px;
+}
+
+.card__main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card__description {
+  display: grid;
+}
+
+.form__content {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 12px;
+}
+
+.form__field {
+  font-size: 18px;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+.form__label {
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
+.form__input {
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.buttons {
+  display: grid;
+  font-size: 18px;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.form__button {
+  color: #ddd;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+.form__button:hover {
+  opacity: 0.7;
+}
+
+.edit {
+  background-color: blue;
+}
+
+.delete {
+  background-color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
