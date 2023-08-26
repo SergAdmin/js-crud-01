@@ -1,0 +1,79 @@
+@use '../../lib/service.scss' as s;
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: s.space(10);
+    padding: s.space(10);
+
+}
+
+
+.form__title{
+    display: flex;
+    flex-direction: column;
+    gap: s.space(5);
+    align-items: flex-start;
+    font-size: 25px;
+    color: blue;
+    padding: s.space(5);
+}
+
+.product-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: s.space(5);
+    
+}
+
+.product-card {
+    border-radius: 10px;
+    border: 1px solid s.color(border);
+    padding: s.space(4);
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;    
+
+    align-items: flex-start;
+    gap: s.space(3);
+}
+
+
+.product-card__name {
+    font-size: 20px;
+    font-weight: bold;
+    gap: 20px;
+}
+
+.product-card__description {
+    font-size: 16px;
+    
+}
+
+.product-card__price {
+    font-size: 16px;
+    display: grid;
+    grid-template-rows: max-content  ;
+    
+}
+
+.product-card__id {
+    font-size: 16px;
+    color: s.color(grey);
+}
+
+.product-card__button {
+    display: grid;
+    justify-items: end;
+    
+    padding: s.space(3) s.space(7);
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
