@@ -1,0 +1,56 @@
+@use '../../lib/service.scss' as s;
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: s.space(10);
+    padding: s.space(10);
+}
+
+.product-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: s.space(5);
+}
+
+.form__title{
+    color: s.color(main);
+    font-size: 35px;
+    padding-bottom: 20px;
+}
+
+.form__content{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid s.color(border);
+    border-radius: 5px;
+}
+
+.form__field{
+    font-size: 18px;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+}
+
+.form__button{
+    background-color: s.color(main);
+    color: s.color(light);
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.card__title{
+    font-size: 25px;
+    padding-bottom: 15px;
+}

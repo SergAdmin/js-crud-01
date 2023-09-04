@@ -1,0 +1,55 @@
+{{!-- 
+Це сод container файлу для  index сторінки,
+в якому міститься код, котрий буде віддаватись по шляху (PATH) - "/"
+--}}
+
+<main class="main">
+    {{> heading title="Інформація про товар"}}
+    {{!-- <div class="product-list">
+        {{#each data.list}}
+        {{> purchase-product data=this}}
+        {{/each}}
+    </div> --}}
+    {{#with data.product}}
+        <form method="POST" action="/purchase-create?id={{id}}">
+            <div class="card">
+                <img src="{{img}}" alt="{{title}}" class="product-info__image">
+
+                <div class="product-info">
+
+                    
+                    <h2 class="product-info__title">{{title}}</h2>
+
+                    {{> divider}}
+                    
+                    <p class="product-info__subtitle">{{description}}</p>
+
+                    {{> divider}}
+
+                    {{#each category}}
+                        <span class="product-info__category product-info__category--{{id}}">{{text}}</span>
+                    {{/each}}
+
+                    {{> divider}}
+
+                    {{>field label="Кількість" type="number" name="amount" value="1"}}
+
+                    {{!-- <button href="/purchase-product?id={{id}}" class="product-info__button">Купити зараз: {{price}} грн</button> --}}
+                    {{!-- <button class="product-info__button">Купити зараз: {{price}} грн</button> --}}
+
+                    {{>button text='Купити зараз ' price=price}}
+
+                </div>
+            </div>
+        </form>
+    {{/with}}
+
+    {{> heading title="Інші товари" info='Комп"ютери та ноутбуки'}}
+
+    <div class="product-list">
+        {{#each data.list}}
+            {{> purchase-product data=this}}
+        {{/each}}
+    </div>
+
+</main>

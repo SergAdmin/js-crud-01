@@ -1,0 +1,62 @@
+@use "../../lib/service.scss" as s;
+
+@use '../../component/heading/style.scss' as heading;
+@use '../../component/divider/style.scss' as divider;
+@use '../../component/field/style.scss' as field;
+
+@use '../../component/button/style.scss' as button;
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: s.space(10);
+    padding: s.space(10);
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: s.space(4);
+    align-items: flex-start;
+}
+
+.card {
+  display: flex;
+  gap: s.space(4);
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+
+.product-info__subtitle {
+    font-size: 16px;
+    color: s.color( grey);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
