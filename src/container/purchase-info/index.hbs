@@ -1,78 +1,115 @@
-<main class="main">
+<main class="main main__card row">
+
 
     {{>heading title="Інформація про замовлення" }}
 
-    {{#with data.product}}
+    {{#with data.product}}  
 
-        {{!-- <form method="GET" action="/purchase-change?id={{id}}"  class="product-info"> --}}
-       
+  
+
+            
+            <div class="card">
+                <div class="column">
+                    <h3>ID: </h3> <br>
+                    <p>{{id}}</p>  
+                </div>
+            </div>
+               
+            {{> divider}}    
+                           
+            <div class="card">
+                <div class="column">
+
+                    <h3>Ім'я:</h3>  <br>   
+                    <p>{{firstname}}</p>              
+                    
+                </div>
+
+                <div class="column">              
+
+                    <h3>Прізвище: </h3> <br>  
+                    <p>{{lastname}}</p> 
+                    
+                </div>
+            </div>
+
+            <div class="card">
+
+                 <div class="column">
+
+                    <h3>Телефон:</h3>  <br>   
+                    <p>{{phone}}</p>              
+                    
+                </div>
+
+                <div class="column">              
+
+                    <h3>Пошта: </h3> <br>  
+                    <p>{{email}}</p> 
+                    
+                </div>
                 
-                    <div class="card">
-                        <p>ID: </p> 
-                        {{id}}
-                    </div>
+            </div>
+            
+            {{> divider}}
 
-                    {{> divider}}
+            <div class="column">              
 
-                    <div class="card">
-                        <p>Ім'я: </p> 
-                        {{firstname}}
+                    <h3>Назва товару: </h3> <br>  
+                    <p>{{product.title}}</p> 
+                    
+            </div>
 
-                        <p>Прізвище: </p> 
-                        {{lastname}}
+            <div class="column">              
 
-                    </div>
+                    <h3>Коментар: </h3> <br>  
+                    <p>{{comment}}</p> 
+                    
+            </div>          
 
-                    <div class="card">
+            {{> divider}}
 
-                        <p>Телефон: </p>  
-                        {{phone}}
+            <div class="card">
 
-                        <p>Пошта: </p> 
-                        {{email}}
+                 <div class="column">
 
-                    </div>
-                       
+                    <h3>Вартість тоавру:</h3>  <br>   
+                    <p>{{productPrice}}</p>              
+                    
+                </div>
 
-                    {{> divider}}
-                   
-                    <p>Назва товару : </p>
-                    {{product.title}}
+                <div class="column">              
 
-                    <p>Коментар : </p>
-                    {{comment}}
+                    <h3>Вартість доставки: </h3> <br>  
+                    <p>{{deliveryPrice}}</p> 
+                    
+                </div>
+                
+            </div>
 
-                    {{> divider}}
+            <div class="card">
 
-                        <div class="card">
+                 <div class="column">
 
-                            <p>Вартість тоавру :</p>
-                            {{productPrice}}
+                    <h3>Сума до сплати:</h3>  <br>   
+                    <p>{{totalPrice}}</p>              
+                    
+                </div>
 
-                            <p>Вартість доставки :</p>
-                            {{deliveryPrice}}
+                <div class="column">              
 
-                        </div>
+                    <h3>Нараховані бонуси: </h3> <br>  
+                    <p>{{bonus}}</p> 
+                    
+                </div>
+                
+            </div>
+            
+            {{> divider}}
+         
+            <a href='/purchase-edit?id={{id}}'>{{> button text="Змінити дані"}} </a>  
+ 
 
-                        <div class="card">
-
-                            <p>Сума до сплати : </p>
-                            {{totalPrice}}
-
-                            <p>Нараховані бонуси : </p>
-                            {{bonus}}
-
-                        </div>
-
-                    {{> divider}}
-
-                     {{!-- {{> button text="Змінити дані"}} --}}
-                  
-                 
-                     <a href='/purchase-change?id={{id}}'>{{> button text="Змінити дані"}} </a>  
-                   
-       {{!-- </form> --}}
     {{/with}}
-
 
 </main>
