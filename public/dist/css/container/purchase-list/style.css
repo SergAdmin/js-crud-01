@@ -41,39 +41,28 @@
   padding: 40px;
 }
 
-.card__list {
-  gap: 20px;
-  justify-content: space-between;
-  padding: 5px;
+.field {
+  width: 100%;
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  overflow-x: auto;
-  overflow-y: hidden;
-  list-style: none;
-  padding: 5px;
-  box-sizing: border-box;
-  position: relative;
-  margin: 5px;
-  position: relative;
-  z-index: 1;
-}
-
-.card {
-  display: flex;
-  gap: 4px;
-  align-items: flex-start;
   flex-direction: column;
+  z-index: -1;
+  gap: 10px;
+  margin: 5px;
+}
+.field__label {
+  color: rgb(152, 144, 144);
 }
 
 .custom-link {
   color: #000;
   cursor: pointer;
   text-decoration: none;
-  display: flex;
-  flex-direction: row;
+  position: relative;
+  gap: 10px;
+  border: none;
+  display: grid;
+  grid-template-columns: 50px 1fr 1fr 1fr;
   margin-bottom: 10px;
-  z-index: 2;
 }
 
 /*# sourceMappingURL=style.css.map */
