@@ -1,0 +1,78 @@
+<main class="main">
+
+    {{>heading title="Інформація про замовлення" }}
+
+    {{#with data.product}}
+
+        {{!-- <form method="GET" action="/purchase-change?id={{id}}"  class="product-info"> --}}
+       
+                
+                    <div class="card">
+                        <p>ID: </p> 
+                        {{id}}
+                    </div>
+
+                    {{> divider}}
+
+                    <div class="card">
+                        <p>Ім'я: </p> 
+                        {{firstname}}
+
+                        <p>Прізвище: </p> 
+                        {{lastname}}
+
+                    </div>
+
+                    <div class="card">
+
+                        <p>Телефон: </p>  
+                        {{phone}}
+
+                        <p>Пошта: </p> 
+                        {{email}}
+
+                    </div>
+                       
+
+                    {{> divider}}
+                   
+                    <p>Назва товару : </p>
+                    {{product.title}}
+
+                    <p>Коментар : </p>
+                    {{comment}}
+
+                    {{> divider}}
+
+                        <div class="card">
+
+                            <p>Вартість тоавру :</p>
+                            {{productPrice}}
+
+                            <p>Вартість доставки :</p>
+                            {{deliveryPrice}}
+
+                        </div>
+
+                        <div class="card">
+
+                            <p>Сума до сплати : </p>
+                            {{totalPrice}}
+
+                            <p>Нараховані бонуси : </p>
+                            {{bonus}}
+
+                        </div>
+
+                    {{> divider}}
+
+                     {{!-- {{> button text="Змінити дані"}} --}}
+                  
+                 
+                     <a href='/purchase-change?id={{id}}'>{{> button text="Змінити дані"}} </a>  
+                   
+       {{!-- </form> --}}
+    {{/with}}
+
+
+</main>

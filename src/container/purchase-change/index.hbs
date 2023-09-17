@@ -1,0 +1,53 @@
+<main class="main">
+
+    {{>heading title="Зміна даних" }}
+
+    {{#with data.product}}
+        <form method="POST" action="/change?id={{id}}" class="form-card"> 
+            
+                        <div class="card">  
+                            <p class="label">ID: </p> 
+                            <span>{{id}}</span>
+                        </div> 
+
+                        <div class="card__info">
+                            <div class="card">   
+                                <p class="label">Ім'я: </p> 
+                                <span>{{>field name="firstname" value= firstname}}</span>
+                            </div> 
+                            <div class="card">   
+                                <p class="label">Прізвище: </p> 
+                                <spanp>{{>field name="lastname" value= lastname}}</span>
+                            </div> 
+                        </div>
+
+                        <div class="card__info">
+                            <div class="card">  
+
+                                <p class="label">Телефон: </p> 
+                                <p></p>{{>field name="phone" value= phone}}</p>
+                            </div>
+
+                            <div class="card">  
+
+                                <p class="label">Пошта: </p> 
+                                <p>{{>field name="email" value= email}}</p>
+                            </div>
+
+                        </div>
+
+                        <div class="card">  
+
+                                <p class="label">Коментар: </p> 
+                                <p>{{>field name="comment" value= comment}}</p>
+                            </div>
+                       
+
+                    {{>button text='Зберегти зміни'}}
+           
+
+        </form>
+    {{/with}}
+
+
+</main>
