@@ -1,6 +1,7 @@
 @use "../../lib/service.scss" as s;
 
 @use '../../component/heading/style.scss' as heading;
+
 @use '../../component/divider/style.scss' as divider;
 
 @use '../../component/button/style.scss' as button;
@@ -12,53 +13,29 @@
     padding: s.space(10);
 }
 
-.card__list {
-  
-    // width: 100%;
-    // display: flex;
-    // flex-direction: row;
-    gap: 20px;
-    justify-content: space-between;
-    padding: 5px;
 
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    overflow-x: auto;
-    overflow-y: hidden;
-    list-style: none;
-    padding: 5px;
-    box-sizing: border-box;
-    position: relative;
-    margin: 5px;
-
-    position: relative;
-    z-index: 1;
-
-}
-
-.card {
+.field {
+  width: 100%;
   display: flex;
-  gap: 4px;
-  align-items: flex-start;
   flex-direction: column;
+  z-index: -1;
+  gap: 10px;
+  margin: 5px;
+  //position: absolute;
+
+  &__label{
+    color: rgb(152, 144, 144);
+  }
 }
 
-.href{
+.custom-link{
   color: s.color(dark);
   cursor: pointer;
   text-decoration: none; 
-  // border: 1px solid chocolate;
-  display: flex;
-  flex-direction: row;
+  position: relative;
+  gap: 10px;
+  border: none;
+  display: grid;
+  grid-template-columns: 50px 1fr 1fr 1fr;
   margin-bottom: 10px;
-  z-index: 2;
 }
-
-
-
-
-    
-
-
-

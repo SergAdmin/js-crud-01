@@ -62,7 +62,7 @@ class Product {
 }
 
 Product.add(
-  'https://picsumm.photos/200/300',
+  'https://picsum.photos/200/300',
   `Компє'ютер Artline Gaming (X43v31) AMD Ryzen 5 3600/`,
   `AMD Ryzen 5 3600 (3.6 - 4.2 ГГц) / RAM 16 ГБ / HDD 1 ТБ + SSD 480 ГБ / nVidia GeForce RTX 3050, 8 ГБ / 'без ОД' / LAN / 'без ОС'`,
   [
@@ -74,7 +74,7 @@ Product.add(
 )
 
 Product.add(
-  'https://picsumm.photos/200/300',
+  'https://picsum.photos/200/300',
   `Компє'ютер ProLine Business (B112p19) Intel Core I5 9400F/`,
   `Intel Core i5 9400F (2.9 - 4.1 ГГц) / RAM 8 ГБ / HDD 1 ТБ / Intel UHD Grafics 630 / DVD+/RW- / LAN / DOS`,
   [{ id: 2, text: 'Топ продажів' }],
@@ -83,7 +83,7 @@ Product.add(
 )
 
 Product.add(
-  'https://picsumm.photos/200/300',
+  'https://picsum.photos/200/300',
   `Компє'ютер ProLine Workstation (W67p03) Intel Xeon E-2226G/`,
   `Intel Xeon E-2226G (3.4 - 4.7 ГГц) / RAM 16 ГБ / SSD 512 ГБ / nVidia Quadro p620, 2Гб / DVD+/RW- / LAN / 'без ОС'`,
   [{ id: 1, text: 'Готовий до відправки' }],
@@ -106,7 +106,7 @@ class Purchase {
   }
 
   static calcBonusAmount = (value) => {
-    return value + Purchase.#BONUS_FACTOR
+    return value * Purchase.#BONUS_FACTOR
   }
 
   static updateBonusBalance = (
@@ -178,7 +178,7 @@ class Purchase {
     // )
     const purchase = Purchase.getById(id)
 
-    console.log(data.firstname)
+    //console.log(data.firstname)
 
     if (purchase) {
       if (data.firstname)
@@ -339,7 +339,7 @@ router.post('/purchase-submit', function (req, res) {
     bonus,
   } = req.body
 
-  console.log(`req.body`, req.body)
+  //console.log(`req.body`, req.body)
 
   const product = Product.getById(id)
 
@@ -350,7 +350,7 @@ router.post('/purchase-submit', function (req, res) {
       data: {
         message: 'Помилка',
         info: `Товар не знайдено`,
-        link: `/purchase-index`,
+        link: `/purchase-list`,
       },
     })
   }
@@ -362,7 +362,7 @@ router.post('/purchase-submit', function (req, res) {
       data: {
         message: 'Помилка',
         info: `Товару нема в потрібній кількості`,
-        link: `/`,
+        link: `/purchase-list`,
       },
     })
   }
@@ -388,7 +388,7 @@ router.post('/purchase-submit', function (req, res) {
       data: {
         message: `'Помилка'`,
         info: `Некоректні дані`,
-        link: `/`,
+        link: `/purchase-list`,
       },
     })
   }
@@ -400,7 +400,7 @@ router.post('/purchase-submit', function (req, res) {
       data: {
         message: "Заповніть обов'язкові поля",
         info: `Некоректні дані`,
-        link: `/`,
+        link: `/purchase-list`,
       },
     })
   }
@@ -463,6 +463,7 @@ router.post('/purchase-submit', function (req, res) {
   // ↑↑ сюди вводимо JSON дані
 })
 // ================================================================
+// ================================================================
 
 router.get('/purchase-list', function (req, res) {
   Purchase.getList(),
@@ -479,22 +480,25 @@ router.get('/purchase-list', function (req, res) {
 router.get('/purchase-info', function (req, res) {
   const id = Number(req.query.id)
 
-  // console.log('purchase-info')
+  //console.log('purchase-info')
+
+  let product = Purchase.getById(id)
+
+  //console.log(`req.body`, res)
 
   res.render('purchase-info', {
     style: 'purchase-info',
-
     data: {
-      product: Purchase.getById(id),
+      product: product,
     },
   })
 })
 // ================================================================
-router.get('/purchase-change', function (req, res) {
+router.get('/purchase-edit', function (req, res) {
   const id = Number(req.query.id)
 
-  res.render('purchase-change', {
-    style: 'purchase-change',
+  res.render('purchase-edit', {
+    style: 'purchase-edit',
 
     data: {
       product: Purchase.getById(id),
@@ -503,7 +507,7 @@ router.get('/purchase-change', function (req, res) {
 })
 // ================================================================
 
-router.post('/change', function (req, res) {
+router.post('/purchase-edit', function (req, res) {
   const id = Number(req.query.id)
 
   let { firstname, lastname, email, phone, comment } =
@@ -521,7 +525,7 @@ router.post('/change', function (req, res) {
     data: {
       message: 'Успішне виконання дії',
       info: `Дані оновлено`,
-      // link: `/purchase-change/?id=${id}`,
+      //link: `/purchase-edit`,
       link: `/purchase-list`,
     },
   })

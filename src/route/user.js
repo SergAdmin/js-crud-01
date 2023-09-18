@@ -1,6 +1,6 @@
 // Підключаємо технологію express для back-end сервера
 const express = require('express')
-const { TRUE } = require('sass')
+//const { TRUE } = require('sass')
 // Cтворюємо роутер - місце, куди ми підключаємо ендпоїнти
 const router = express.Router()
 

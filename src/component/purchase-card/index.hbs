@@ -1,0 +1,24 @@
+{{#with data}}
+
+    <ul>
+        <li>
+            <a class="custom-link" href="/purchase-info?id={{id}}" > 
+                                                      
+                
+                {{>field label="ID:" value=id}} 
+                        
+                   
+                {{>field label="Товари: " value=product.title}} 
+                       
+                    
+                {{>field label="Сума замовлення: "    value=totalPrice }}
+                     
+                   
+                {{>field label="Нараховані бонуси: " value=bonus }}
+                                                        
+            </a>                                                          
+                                                                   
+        </li>
+        {{>divider}}   
+    </ul> 
+{{/with}}

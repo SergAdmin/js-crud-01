@@ -14,12 +14,6 @@
   color: #000;
 }
 
-.product-info__divider {
-  width: 100%;
-  height: 1px;
-  background: #ced4da;
-}
-
 .field {
   display: flex;
   flex-direction: column;
@@ -40,6 +34,12 @@
 .field--disabled {
   position: absolute;
   display: none;
+}
+
+.product-info__divider {
+  width: 100%;
+  height: 1px;
+  background: #ced4da;
 }
 
 .button {
@@ -63,18 +63,28 @@
   padding: 40px;
 }
 
-.product-info {
+.main__card {
+  margin: 50px;
+  max-width: 100%;
+  height: fit-content;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  align-items: flex-start;
+  padding: 40px;
 }
 
 .card {
-  display: flex;
-  gap: 16px;
+  display: grid;
   align-items: flex-start;
-  flex-direction: row;
+  grid-template-columns: 1fr 1fr;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: fit-content;
 }
 
 .product-info__subtitle {
