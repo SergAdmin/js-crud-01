@@ -1,0 +1,38 @@
+@use '../../lib/service.scss' as s;
+
+@use '../../lib/spotify.scss' as spotify;
+
+
+.header{
+
+    color: s.color(light);
+
+    font-size: 24px;
+
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: s.space(8);
+    align-items: center;
+    justify-items: start;
+
+    &__button {
+        color: s.color(light);
+
+        transition: opacity 0.6s;
+
+        &:hover{
+            opacity: 0.6;
+        }
+    }
+
+}
+
+.playlist__list{
+    grid-template-columns: auto auto;
+}
+
+
+.playlist{
+    grid-template-columns: auto;
+    gap: s.space(1);
+}
