@@ -1,0 +1,44 @@
+<main class='main'>
+  {{#with data}}
+    <div class='main__content'>
+
+      <div class='header'>
+        <h1 class='title title--center'>Моя бібліотека</h1>
+        <form method='POST' action='/spotify-search'>
+          <button class='header__button'><img
+              src='svg/spotify_search.svg'
+            /></button>
+        </form>
+
+        <form method='GET' action='/spotify-choose'>
+
+          <button class='header__button'><img
+              src='svg/add_button_hug.svg'
+            /></button>
+
+        </form>
+      </div>
+
+      <ul class='playlist__list'>
+        {{#each list}}
+          <li class='playlist'>
+            <img
+              src='{{image}}'
+              alt='{{name}}'
+              height='300px'
+            />
+            <div class='playlist__content'>
+              <strong
+                class='playlist__name'
+              >{{name}}</strong>
+              <span class='playlist__amount'>Кількість
+                пісень:
+                {{amount}}</span>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+
+    </div>
+  {{/with}}
+</main>
